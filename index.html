@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VaultAccess usable-security interactive prototype" />
+  <title>VaultAccess — Usable Security Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <button class="brand" type="button" data-go="login" aria-label="VaultAccess home">
+        <span class="brand-mark">V</span>
+        <span class="brand-copy">
+          <strong>VAULTACCESS</strong>
+          <small>Dynamic Risk-Limiting & Account Protection</small>
+        </span>
+      </button>
+
+      <nav class="topnav" aria-label="Primary navigation">
+        <button class="nav-link active" data-nav="login" data-go="login">Customer Login</button>
+        <button class="nav-link" data-nav="dashboard" data-go="dashboard">Customer Dashboard</button>
+        <button class="nav-link" data-nav="staff" data-go="staff">Staff Console</button>
+      </nav>
+    </header>
+
+    <main id="screen" class="screen-shell" aria-live="polite"></main>
+
+    <div class="demo-dock" id="demoDock">
+      <button class="demo-toggle" id="demoToggle" aria-expanded="false">
+        <span>Demo controls</span><span aria-hidden="true">⌘</span>
+      </button>
+      <div class="demo-panel" id="demoPanel" hidden>
+        <div class="demo-panel-head">
+          <div>
+            <strong>Defense demo shortcuts</strong>
+            <span>Jump to a scenario without changing the actual screen design.</span>
+          </div>
+          <button class="icon-btn" id="closeDemo" aria-label="Close demo controls">×</button>
+        </div>
+        <div class="demo-grid">
+          <button data-scenario="trusted"><span class="dot success"></span>Level 1 — Trusted device</button>
+          <button data-scenario="new"><span class="dot blue"></span>Level 2 — New device</button>
+          <button data-scenario="risk"><span class="dot warning"></span>Level 3 — High risk</button>
+          <button data-scenario="staff"><span class="dot purple"></span>Staff privilege demo</button>
+        </div>
+        <div class="demo-note">Tip: press <kbd>D</kbd> to show/hide this panel.</div>
+      </div>
+    </div>
+
+    <div class="toast-region" id="toastRegion" aria-live="assertive"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
